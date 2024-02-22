@@ -68,8 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\NavBar.css" />
-    <Content Include="CSS\AdminStyleSheet.css" />
-    <Content Include="Pages\People.aspx" />
+    <Content Include="CSS\ManagementStyleSheet.css" />
+    <Content Include="Pages\Login.aspx" />
+    <Content Include="Pages\LogUp.aspx" />
+    <Content Include="Pages\Management\Courses.aspx" />
+    <Content Include="Pages\Management\People.aspx" />
+    <Content Include="Pages\Management\Students.aspx" />
+    <Content Include="Pages\Management\Teachers.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -89,12 +94,47 @@
     <Compile Include="Pages\CourseMaster.Master.designer.cs">
       <DependentUpon>CourseMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\People.aspx.cs">
+    <Compile Include="Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LogUp.aspx.cs">
+      <DependentUpon>LogUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\LogUp.aspx.designer.cs">
+      <DependentUpon>LogUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Management\Courses.aspx.cs">
+      <DependentUpon>Courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Management\Courses.aspx.designer.cs">
+      <DependentUpon>Courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Management\People.aspx.cs">
       <DependentUpon>People.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\People.aspx.designer.cs">
+    <Compile Include="Pages\Management\People.aspx.designer.cs">
       <DependentUpon>People.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Management\Students.aspx.cs">
+      <DependentUpon>Students.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Management\Students.aspx.designer.cs">
+      <DependentUpon>Students.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Management\Teachers.aspx.cs">
+      <DependentUpon>Teachers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Management\Teachers.aspx.designer.cs">
+      <DependentUpon>Teachers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

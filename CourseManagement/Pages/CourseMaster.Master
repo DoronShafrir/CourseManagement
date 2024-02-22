@@ -11,7 +11,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <<body>
+       
     <%-- Background Screen Saver --%>
    
         <div id="main-bg" class="bg-image" >
@@ -48,18 +48,13 @@
                         <a href="Optics.aspx">Optics</a>
                     </li>
                     <li class="dropdown" runat="server" id="Li4">
-                        <a href="#">Mechanics</a>
+                        <a href="#">Management</a>
                         <div class="dropdown-content">
-                            <a href="Kinematics.aspx">Kinematics</a>
-                            <a href="Dynamics.aspx">Dynamics</a>
-                            <a href="Circular Motion.aspx">Circular Motion</a>
-                            <a href="Energy.aspx">Energy</a>
-                            <a href="Momentum and Impulse.aspx">Momentum and Impulse</a>
-                            <a href="Gravitation.aspx">Gravitation</a>
-                            <a href="Harmonical Oscilation.aspx">Harmonical Oscilation</a>
-                            <a href="Teaching Material.aspx">Teaching Material</a>
-
-                        </div>
+                            <a href="./Management/People.aspx">Peopele</a>
+                            <a href="./Management/Courses.aspx">Courses</a>
+                            <a href="./Management/Teachers.aspx">Teachers</a>
+                            <a href="./Management/Students.aspx">Students</a>
+                         </div>
                     </li>
                     <li class="dropdown" runat="server" id="Li5">
                         <a href="#">Electricity</a>
