@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CourseManagement.Model
 {
-    public class Course :Person
+    public class Course : Person
     {
         public int CId { get; set; }
         public string CourseName { get; set; }
@@ -26,3 +26,4 @@ namespace CourseManagement.Model
 
         }
     }
+}
