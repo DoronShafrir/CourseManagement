@@ -1,0 +1,125 @@
+﻿table#users {
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: arial, sans-serif;
+    border-collapse: separate;
+    table-layout: fixed;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    z-index: -1;
+    text-align: center;
+}
+
+    table#users th {
+        width: 7%;
+        text-align: center;
+        font-weight: lighter;
+    }
+
+    table#users td {
+        height: 20px;
+        text-align: center;
+    }
+
+    table#users td, th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+        width: 150px;
+    }
+
+    table#users tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+.flex-container {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+    .flex-container > div {
+        display: flex;
+        flex-direction: row;
+    }
+
+.active-area {
+    display: flex;
+    /*border: 1px solid salmon;*/
+    flex-direction: column;
+}
+
+.search_input {
+    margin-top: 20px;
+    height: 1.0em;
+    font-size: 1.2em;
+    color: red;
+}
+
+    .search_input:hover {
+        background-color: yellow;
+    }
+
+.search-label {
+    margin-left: 10%;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: darkgreen;
+}
+
+.active_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    font-size: 1.5em;
+    padding: 5px;
+    margin-top: 30px;
+}
+
+.admin-button:hover {
+    background-color: yellow;
+}
+
+.admin-button {
+    width: 150px;
+    height: 3em;
+    border-radius: 5px;
+    background-color: aqua;
+    word-wrap: break-word;
+}
+
+#List {
+    font-size: 2.5em;
+    margin-left: 50px;
+    margin-top: 0%;
+    position: absolute;
+    display: none;
+}
+
+#active_input, #delete_input {
+    display: flex;
+    column-gap: 2%;
+    display: none;
+}
+
+.input_field {
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 1.0em;
+    padding: 5px;
+    margin-top: 30px;
+    height: 1.5em;
+    border-radius: 5px;
+    background-color: aquamarine;
+}
+
+#submitNewButton, #deleteButton {
+    font-size: 1.0em;
+    padding: 5px;
+    margin-top: 30px;
+    height: 2em;
+    border-radius: 5px;
+    display: none;
+}

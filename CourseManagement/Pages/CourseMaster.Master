@@ -1,16 +1,88 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CourseMaster.master.cs" Inherits="CourseManagement.Pages.CourseMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CourseMaster.master.cs" Inherits="CourseManagement.Pages.CourseMaster" ClientIDMode="Static" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-    <title></title>
+    <title>CourseManagement</title>
+     <link href="../CSS/NavBar.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <<body>
+    <%-- Background Screen Saver --%>
+   
+        <div id="main-bg" class="bg-image" >
+
+                     <table align="center" class="tblHeader">
+                <tr>
+                    <td style="width: 15%;" runat="server" id="msg">
+                        <button runat="Server" id="ExitBtn" name="ExitBtn" style="font-size:1.5em;" onserverclick="Exit">Logout</button>
+                    </td>
+                    <td style="width: 70%"; display="block"; margin="auto">
+                        <img src="../Img/quantum.jpg" height="100" />
+                        <img src="../Img/quantum.jpg" height="100" />
+                        <img src="../Img/quantum.jpg" height="100" />
+                        <img src="../Img/quantum.jpg" height="100" />
+                        <img src="../Img/quantum.jpg" height="100" />
+                    </td>
+                    <td id="CurrentUserName" style="width: 15%; font-size:2em" runat="server"></td>
+                </tr>
+            </table>
+            <div id="mainBar">
+                <ul class="HorBarUl">
+                    <li id="Li1" runat="server">
+                        <a href="Physics.aspx">Physics</a>
+                    </li>
+                    <li class="dropdown" runat="server" id="Li2">
+                        <a href="#">Login</a>
+                        <div class="dropdown-content">
+                            <a href="Login.aspx">Login</a>
+                            <a href="LogUp.aspx">LogUp</a>
+                            <a href="LogOut.aspx">Exit</a>
+                        </div>
+                    </li>
+                    <li runat="server" id="Li3">
+                        <a href="Optics.aspx">Optics</a>
+                    </li>
+                    <li class="dropdown" runat="server" id="Li4">
+                        <a href="#">Mechanics</a>
+                        <div class="dropdown-content">
+                            <a href="Kinematics.aspx">Kinematics</a>
+                            <a href="Dynamics.aspx">Dynamics</a>
+                            <a href="Circular Motion.aspx">Circular Motion</a>
+                            <a href="Energy.aspx">Energy</a>
+                            <a href="Momentum and Impulse.aspx">Momentum and Impulse</a>
+                            <a href="Gravitation.aspx">Gravitation</a>
+                            <a href="Harmonical Oscilation.aspx">Harmonical Oscilation</a>
+                            <a href="Teaching Material.aspx">Teaching Material</a>
+
+                        </div>
+                    </li>
+                    <li class="dropdown" runat="server" id="Li5">
+                        <a href="#">Electricity</a>
+                        <div class="dropdown-content">
+                            <a href="Electricity and Coulombs Law.aspx">Electricity and Colon law</a>
+                            <a href="Electical Field.aspx">Electical Field</a>
+                            <a href="Electic Potential Energy.aspx">Electic Potential Energy</a>
+                            <a href="Current and Resistance.aspx">Current and Resistance</a>
+                            <a href="DC Circuits.aspx">DC Circuits</a>
+                            <a href="Magnets and Magnetic Fields.aspx">Magnets and Magnet Field</a>
+                            <a href="EMF and Induction.aspx">Faradey law and inductive EMF</a>
+                        </div>
+                    </li>
+                    <li class="dropdown" runat="server" id="Li6">
+                        <a href="#">Admin</a>
+                            <div class="dropdown-content">
+                                <a href="Admin.aspx">Users Admin</a>
+                                <a href="AdminCounters.aspx">Application Admin</a>
+                                <a href="AdminMainPage.aspx">Application  Main Admin</a>
+                             </div>
+                       </li>                                
+                  </ul>
+            </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
