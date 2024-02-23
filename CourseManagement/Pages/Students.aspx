@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/CourseMaster.Master" AutoEventWireup="true" CodeBehind="Students.aspx.cs" Inherits="CourseManagement.Pages.Management.Students" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../../CSS/ManagementStyleSheet.css" rel="stylesheet" />
+    <link href="../CSS/ManagementStyleSheet.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        <h1 style="color: crimson">Students Manager Page </h1>

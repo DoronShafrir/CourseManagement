@@ -39,7 +39,7 @@ namespace CourseManagement.Pages
         {
             /***************Redirect to the LogOut Page****************/
             string localHost = Request.Url.ToString().Substring(0, 23);
-            Response.Redirect(localHost + "HTML/LogOut.aspx");
+            Response.Redirect(localHost + "Pages/LogOut.aspx");
 
         }
     }

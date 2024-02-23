@@ -20,7 +20,7 @@ namespace CourseManagement.Pages
                 string connectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\Physics.mdf;Integrated Security=True";
                 SqlConnection con = new SqlConnection(connectionString);
                 // בניית פקודת SQL
-                string SQLStr = $"SELECT * FROM Physics1 WHERE UserName = '{Request.Form["userName"]}' AND Password = '{Request.Form["password"]}'";
+                string SQLStr = $"SELECT * FROM Person WHERE UserName = '{Request.Form["userName"]}' AND Password = '{Request.Form["password"]}'";
                 SqlCommand cmd = new SqlCommand(SQLStr, con);
 
                 // בניית DataSet
@@ -34,28 +34,26 @@ namespace CourseManagement.Pages
                 if (count > 0)
 
                 {
-                    /***********Get the entrie informtion for the loged in **************/
-                    Session["FirstName"] = ds.Tables[0].Rows[0]["FirstName"];
-                    Session["LastName"] = ds.Tables[0].Rows[0]["LastName"];
-                    Session["Address"] = ds.Tables[0].Rows[0]["Address"];
-                    Session["Phone"] = ds.Tables[0].Rows[0]["Phone"];
-                    Session["Hobbies"] = ds.Tables[0].Rows[0]["Hobbies"];
-                    Session["Admin"] = ds.Tables[0].Rows[0]["Admin"];
-                    Session["Password"] = ds.Tables[0].Rows[0]["Password"];
-                    Session["UserName"] = ds.Tables[0].Rows[0]["UserName"];
-                    Session["Email"] = ds.Tables[0].Rows[0]["Email"];
-
-                    string check1 = Session["FirstName"].ToString();
-                    string check2 = Session["LastName"].ToString();
-
                     /**********Update Log Ins counters*************/
+
+                    /***********Get the entrie informtion for the loged in **************/
+                    Session["Name"] = ds.Tables[0].Rows[0]["Name"];
+                    Session["LastName"] = ds.Tables[0].Rows[0]["FName"];
+                    Session["UserName"] = ds.Tables[0].Rows[0]["UserName"];
+                    Session["Admin"] = ds.Tables[0].Rows[0]["Admin"];
+                    Session["Teacher"] = ds.Tables[0].Rows[0]["Teacher"];
+                    Session["Password"] = ds.Tables[0].Rows[0]["Password"];
+                    
+
+                    string check1 = Session["Name"].ToString();
+                    string check2 = Session["LastName"].ToString();
 
                     Application["globalCounterLogedIn"] = (int)Application["globalCounterLogedIn"] + 1;
                     Application["inSiteLogedIn"] = (int)Application["inSiteLogedIn"] + 1;
 
                     /***********Redirect to main  **************/
                     string localHost = Request.Url.ToString().Substring(0, 23);
-                    Response.Redirect(localHost + "Pages/General/WelcomePage.aspx");
+                    Response.Redirect(localHost + "/Pages/WelcomePage.aspx");
 
 
                 }
