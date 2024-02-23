@@ -55,7 +55,7 @@ namespace CourseManagement.Pages
 
                     /***********Redirect to main  **************/
                     string localHost = Request.Url.ToString().Substring(0, 23);
-                    Response.Redirect(localHost + "HTML/Physics.aspx");
+                    Response.Redirect(localHost + "Pages/General/WelcomePage.aspx");
 
 
                 }

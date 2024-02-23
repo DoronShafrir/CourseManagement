@@ -22,11 +22,11 @@
                         <button runat="Server" id="ExitBtn" name="ExitBtn" style="font-size:1.5em;" onserverclick="Exit">Logout</button>
                     </td>
                     <td style="width: 70%"; display="block"; margin="auto">
-                        <img src="../Img/quantum.jpg" height="100" />
-                        <img src="../Img/quantum.jpg" height="100" />
-                        <img src="../Img/quantum.jpg" height="100" />
-                        <img src="../Img/quantum.jpg" height="100" />
-                        <img src="../Img/quantum.jpg" height="100" />
+                        <img src="http://localhost:52232//Img/quantum.jpg" height="100" />
+                        <img src="http://localhost:52232//Img/quantum.jpg" height="100" />
+                        <img src="http://localhost:52232//Img/quantum.jpg" height="100" />
+                        <img src="http://localhost:52232//Img/quantum.jpg" height="100" />
+                        <img src="http://localhost:52232//Img/quantum.jpg" height="100" />
                     </td>
                     <td id="CurrentUserName" style="width: 15%; font-size:2em" runat="server"></td>
                 </tr>
@@ -34,7 +34,7 @@
             <div id="mainBar">
                 <ul class="HorBarUl">
                     <li id="Li1" runat="server">
-                        <a href="Physics.aspx">Physics</a>
+                        <a href="../General/WelcomePage.aspx">Welcome</a>
                     </li>
                     <li class="dropdown" runat="server" id="Li2">
                         <a href="#">Login</a>

@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="CSS\NavBar.css" />
     <Content Include="CSS\ManagementStyleSheet.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Pages\General\WelcomePage.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\LogUp.aspx" />
     <Content Include="Pages\Management\Courses.aspx" />
@@ -79,6 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\Helper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Mapping\CoursesDB.cs" />
     <Compile Include="Mapping\PeopleDB.cs" />
     <Compile Include="Mapping\StudentsDB.cs" />
@@ -93,6 +98,13 @@
     </Compile>
     <Compile Include="Pages\CourseMaster.Master.designer.cs">
       <DependentUpon>CourseMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\General\WelcomePage.aspx.cs">
+      <DependentUpon>WelcomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\General\WelcomePage.aspx.designer.cs">
+      <DependentUpon>WelcomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
