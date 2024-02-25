@@ -104,7 +104,7 @@ namespace CourseManagement.Mapping
             //int arg2 = CheckCourse(student.CourseName); 
             int arg1 = studentId;
             using (SqlConnection connection = new SqlConnection(connectionString))
-            using (SqlCommand command = new SqlCommand($"DELETE FROM Student WHERE SId ='{arg1}';", connection))
+            using (SqlCommand command = new SqlCommand($"DELETE FROM Student WHERE Id ='{arg1}';", connection))
 
                 try
                 {
@@ -161,7 +161,104 @@ namespace CourseManagement.Mapping
                 }
             return recordId;
         }
-        public string PrepareListToDelete()
+
+        public string PrepareCoursestDropDownList()
+        {
+            Courses courses = new Courses();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand("SELECT Courses.CId, Courses.CourseName FROM  Courses", connection))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    // Loop through the data and add <option> elements to the <select> element
+                    while (reader.Read())
+                    {
+                        Student student = new Student
+                        {
+                            CId = (int)reader["CId"],                           
+                            CourseName = reader["CourseName"].ToString()
+                        };
+                        courses.Add(student);
+                    }
+
+                    // Close the SqlDataReader
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception (log, throw, etc.)
+                    Console.WriteLine(ex.Message);
+                }
+
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            string prepartion;
+            prepartion = " <select name=\"idCourseToSelect\" >";
+            prepartion += "<option>Course to register the student>";
+            foreach (var item in courses)
+            {
+                prepartion += $"<option value={item.CId}> Course Name:{item.CourseName} </ option >";
+            }
+            prepartion += "</select>";
+            return prepartion;
+        }
+    
+
+        public string PrepareStudenstsDropDownList()
+        {
+            Students students = new Students();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand("SELECT Student.Id, Person.Name FROM Student INNER JOIN Person ON  SId=Person.PId ;", connection))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    // Loop through the data and add <option> elements to the <select> element
+                    while (reader.Read())
+                    {
+                        Student student = new Student
+                        {
+                            Id = (int)reader["Id"],
+                            Name = reader["Name"].ToString()
+                        };
+                        students.Add(student);
+                    }
+
+                    // Close the SqlDataReader
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception (log, throw, etc.)
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            string prepartion;
+            prepartion = " <select name=\"idToDelete\" >";
+            prepartion += "<option>Student to add a course>";
+            foreach (var item in students)
+            {
+                prepartion += $"<option value={item.Id}> Student Name:{item.Name} </ option >";
+            }
+            prepartion += "</select>";
+            return prepartion;
+        }
+
+        public string PrepareStudenstsDropDownListToDelete()
         {
             Students students = new Students();
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -202,7 +299,8 @@ namespace CourseManagement.Mapping
                 }
             }
             string prepartion;
-            prepartion = "<select name=\"idToDelete\" >";
+            prepartion = " <select name=\"idToDelete\" >";
+            prepartion += "<option>Student to be removed from course>";
             foreach (var item in students)
             {
                 prepartion += $"<option value={item.Id}> Name:{item.Name}   Course:{item.CourseName} </ option >";
@@ -210,7 +308,6 @@ namespace CourseManagement.Mapping
             prepartion += "</select>";
             return prepartion;
         }
-
 
     }
 }

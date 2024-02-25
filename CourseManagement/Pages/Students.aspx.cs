@@ -29,14 +29,30 @@ namespace CourseManagement.Pages.Management
             StudentsDB db = new StudentsDB();
             List.InnerHtml = db.RenderAllStudents();
         }
-        public void ShowAddPart(object sender, EventArgs e)
+        public void ShowInsertPart(object sender, EventArgs e)
         {
-            active_input.Style.Add("display", "none");
+            active_input.Style.Add("display", "block");
             submitNewButton.Style.Add("display", "none");
-            List.Style.Add("display", "block");
+            List.Style.Add("display", "none");
             delete_input.Style.Add("display", "none");
             deleteButton.Style.Add("display", "none");
+            StudentsDB db = new StudentsDB();
+            insertStudentList.InnerHtml = db.PrepareStudenstsDropDownList();
+            insertCourseList.InnerHtml =db.PrepareCoursestDropDownList();
         }
+
+        public void Insert(object sender, EventArgs e)
+        {
+            Student newStudent = new Student();
+            StudentsDB db = new StudentsDB();
+            //newStudent.Name = newStudentName.Value;
+            //newStudent.CourseName = newCourseName.Value;
+
+            int records = db.Insert(newStudent);
+            if (records == 1) { insertMSG.InnerHtml = "</br>Student Added Successfuly"; }
+            else { insertMSG.InnerHtml = "</br>Could Not Add Student !!!"; };
+        }
+
         public void ShowDeletePart(object sender, EventArgs e)
         {
             List.Style.Add("display", "none");
@@ -44,35 +60,21 @@ namespace CourseManagement.Pages.Management
             submitNewButton.Style.Add("display", "none");
             delete_input.Style.Add("display", "block");
             deleteButton.Style.Add("display", "block");
-            Student deleteStudent = new Student();
+            //Student deleteStudent = new Student();
             StudentsDB db = new StudentsDB();
-            //DropDownList ddd = FindControl("delete_input1") as DropDownList;
-            //Control ddd = FindControl("delete_input") as Control;
-            string studentsToDelete = db.PrepareListToDelete();
+            string studentsToDelete = db.PrepareStudenstsDropDownListToDelete();
             selectDelete.InnerHtml = studentsToDelete;
 
-
-        }
-        public void Insert(object sender, EventArgs e)
-        {
-            Student newStudent = new Student();
-            StudentsDB db = new StudentsDB();
-            newStudent.Name = newStudentName.Value;
-            newStudent.CourseName = newCourseName.Value;
-
-            int records = db.Insert(newStudent);
-            if (records == 1) { insertMSG.InnerHtml = "</br>Student Added Successfuly"; }
-            else { insertMSG.InnerHtml = "</br>Could Not Add Student !!!"; };
         }
 
         public void Delete(object sender, EventArgs e)
         {
-            Student deleteStudent = new Student();
+            //Student deleteStudent = new Student();
             StudentsDB db = new StudentsDB();
-            string tmp = Request.Form["idToDelete"];
-            //int records = db.DeleteStudent(5);
-            //if (records == 1) { deleteMSG.InnerHtml = "</br>Course Deleted Successfuly"; }
-            //else { deleteMSG.InnerHtml = "</br>Could Not Delete Course !!!"; };
+            int tmp = int.Parse(Request.Form["idToDelete"]);
+            int records = db.DeleteStudent(tmp);
+            if (records == 1) { deleteMSG.InnerHtml = "</br>Student Removed  Successfuly"; }
+            else { deleteMSG.InnerHtml = "</br>Sudent Not Deleted From Course !!!"; };
         }
     }
 }

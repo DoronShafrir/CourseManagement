@@ -100,8 +100,20 @@
 
 #active_input, #delete_input {
     display: flex;
+    
     column-gap: 2%;
     display: none;
+}
+
+/*.selectList {
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 1.0em;
+    padding: 5px;
+    
+    height: 1.5em;
+    border-radius: 5px;*/
+    /*background-color: aquamarine;*/
 }
 
 .input_field {
@@ -122,4 +134,28 @@
     height: 2em;
     border-radius: 5px;
     display: none;
+}
+select {
+    flex-direction: column;
+    outline: 0;
+    background: #00ffff3d;
+    background-image: none;
+    width: 100%;
+    height: 100%;
+    color: black;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.selectList {
+    position: relative;
+    display: block;
+    width: 15em;
+    height: 2em;
+    line-height: 3;
+    overflow: hidden;
+    border-radius: .25em;
+    padding 10px;
+    /*padding-bottom: 10px;*/
 }

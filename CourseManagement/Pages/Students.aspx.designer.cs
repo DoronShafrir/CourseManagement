@@ -33,22 +33,22 @@ namespace CourseManagement.Pages.Management
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl active_input;
 
         /// <summary>
-        /// newStudentName control.
+        /// insertStudentList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText newStudentName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl insertStudentList;
 
         /// <summary>
-        /// newCourseName control.
+        /// insertCourseList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText newCourseName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl insertCourseList;
 
         /// <summary>
         /// submitNewButton control.
