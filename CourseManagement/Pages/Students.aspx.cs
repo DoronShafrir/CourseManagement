@@ -32,23 +32,29 @@ namespace CourseManagement.Pages.Management
         public void ShowInsertPart(object sender, EventArgs e)
         {
             active_input.Style.Add("display", "block");
-            submitNewButton.Style.Add("display", "none");
+            submitNewButton.Style.Add("display", "block");
             List.Style.Add("display", "none");
             delete_input.Style.Add("display", "none");
             deleteButton.Style.Add("display", "none");
-            StudentsDB db = new StudentsDB();
-            insertStudentList.InnerHtml = db.PrepareStudenstsDropDownList();
-            insertCourseList.InnerHtml =db.PrepareCoursestDropDownList();
+
+            StudentsDB dbS = new StudentsDB();
+            CoursesDB dbC = new CoursesDB();
+            insertStudentList.InnerHtml = dbS.PrepareStudenstsDropDownList();
+            insertCourseList.InnerHtml = dbC.PrepareCoursestDropDownList();
         }
 
         public void Insert(object sender, EventArgs e)
         {
+            int tmp1 = 0, tmp2 = 0 ;
             Student newStudent = new Student();
             StudentsDB db = new StudentsDB();
-            //newStudent.Name = newStudentName.Value;
-            //newStudent.CourseName = newCourseName.Value;
-
-            int records = db.Insert(newStudent);
+            try
+            {
+                 tmp1 = int.Parse(Request.Form["idStudentToSelect"]);
+                 tmp2 = int.Parse(Request.Form["idCourseToSelect"]);
+            }
+            catch { }
+            int records = db.Insert(tmp1, tmp2);
             if (records == 1) { insertMSG.InnerHtml = "</br>Student Added Successfuly"; }
             else { insertMSG.InnerHtml = "</br>Could Not Add Student !!!"; };
         }

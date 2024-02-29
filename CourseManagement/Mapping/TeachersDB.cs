@@ -26,7 +26,6 @@ namespace CourseManagement.Mapping
             return RenderTable;
         }
 
-
         public int Insert(Teacher teacher)
         {
             int records = 0;

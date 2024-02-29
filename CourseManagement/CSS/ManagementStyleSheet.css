@@ -1,32 +1,31 @@
 ﻿table#users {
-    margin-top: 2%;
-    margin-left: 10%;
-    margin-right: 10%;
-    font-family: arial, sans-serif;
+    margin-top: 5%;
+    margin-left: 8%;
     border-collapse: separate;
-    table-layout: fixed;
-    box-sizing: border-box;
+    /* table-layout: fixed;*/
+
     background-color: whitesmoke;
     z-index: -1;
     text-align: center;
 }
 
     table#users th {
-        width: 7%;
-        text-align: center;
-        font-weight: lighter;
+        font-weight: bolt;
     }
 
-    table#users td {
-        height: 20px;
+    table#users th, td {
+        width: 300px;
         text-align: center;
+        font-size: .6em;
+        padding: 3px
     }
+
+
 
     table#users td, th {
         border: 1px solid #dddddd;
         text-align: center;
-        padding: 8px;
-        width: 150px;
+        fpnt-size: 0.6em;
     }
 
     table#users tr:nth-child(even) {
@@ -100,7 +99,6 @@
 
 #active_input, #delete_input {
     display: flex;
-    
     column-gap: 2%;
     display: none;
 }
@@ -113,7 +111,7 @@
     
     height: 1.5em;
     border-radius: 5px;*/
-    /*background-color: aquamarine;*/
+/*background-color: aquamarine;*/
 }
 
 .input_field {
@@ -134,21 +132,41 @@
     height: 2em;
     border-radius: 5px;
     display: none;
+    margin-left: 14%;
+    margin-top: 4%;
 }
+
+.select-container {
+    display: flex;
+}       
+ .select-container >div{
+
+    flex-direction: column;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin: 50px;
+   
+}
+
 select {
     flex-direction: column;
     outline: 0;
     background: #00ffff3d;
     background-image: none;
-    width: 100%;
-    height: 100%;
+    width: 17em;
+    height: 2em;
     color: black;
     cursor: pointer;
     border: 1px solid black;
     border-radius: 3px;
+    font-size: 1em;
+    margin-left: 14%;
+    margin-top: 8%;
+    text-align: left;
+    padding: 5px;
 }
 
-.selectList {
+/*.selectList {
     position: relative;
     display: block;
     width: 15em;
@@ -156,6 +174,6 @@ select {
     line-height: 3;
     overflow: hidden;
     border-radius: .25em;
-    padding 10px;
+    padding 10px;*/
     /*padding-bottom: 10px;*/
-}
+/*}*/

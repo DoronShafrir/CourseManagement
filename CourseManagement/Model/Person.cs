@@ -7,7 +7,7 @@ namespace CourseManagement.Model
 {
     public class Person
     {
-        protected int PId { get; set; }
+        public int PId { get; set; }
         public string Name { get; set; }
         public string FName { get; set; }
         public string UserName { get; set; }

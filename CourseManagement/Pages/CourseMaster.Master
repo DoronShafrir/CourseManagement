@@ -5,32 +5,32 @@
 <html>
 <head runat="server">
     <title>CourseManagement</title>
-     <link href="../CSS/NavBar.css" rel="stylesheet" />
+    <link href="../CSS/NavBar.css" rel="stylesheet" />
     <%--<base href="/Pages/" />--%>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-       
-    <%-- Background Screen Saver --%>
-   
-        <div id="main-bg" class="bg-image" >
 
-                     <table align="center" class="tblHeader">
+        <%-- Background Screen Saver --%>
+
+        <div id="main-bg" class="bg-image">
+
+            <table align="center" class="tblHeader">
                 <tr>
                     <td style="width: 15%;" runat="server" id="msg">
-                        <button type="button"  style="font-size:1.5em;" runat="server" onserverclick="Exit">Logout</button>
-                       <%-- <input type="button" value="Logout"  style="font-size:1.5em;" onserverclick="Out" runat="server" />--%>
+                        <button type="button" style="font-size: 1.5em;" runat="server" onserverclick="Exit">Logout</button>
+                         <%--<input type="button" value="Logout"  style="font-size:1.5em;" onserverclick="Out" runat="server" />--%>
                     </td>
-                    <td style="width: 70%"; display="block"; margin="auto">
+                    <td style="width: 70%;">
                         <img src="../Img/quantum.jpg" height="100" />
                         <img src="../Img/quantum.jpg" height="100" />
                         <img src="../Img/quantum.jpg" height="100" />
                         <img src="../Img/quantum.jpg" height="100" />
                         <img src="../Img/quantum.jpg" height="100" />
                     </td>
-                    <td id="CurrentUserName" style="width: 15%; font-size:2em" runat="server"></td>
+                    <td id="CurrentUserName" style="width: 15%; font-size: 2em" runat="server"></td>
                 </tr>
             </table>
             <div id="mainBar">
@@ -47,38 +47,40 @@
                         </div>
                     </li>
                     <li runat="server" id="Li3">
-                        <a href="Optics.aspx">Optics</a>
+                        <a href="#">Students</a>
+                        <div class="dropdown-content">
+                            <a href="#">Manage My Courses</a>
+                            <a href="#">Register Course</a>
+                            <a href="#">My Status</a>
+                        </div>
                     </li>
-                    <li class="dropdown" runat="server" id="Li4">
+                    <li runat="server" id="Li4">
+                        <a href="#">Teachers</a>
+                        <div class="dropdown-content">
+                            <a href="#">Manage My Courses</a>
+                            <a href="#">Add Course</a>
+                            <a href="#">Manage Students and Marks</a>
+                        </div>
+                    </li>
+                    <li class="dropdown" runat="server" id="Li5">
                         <a href="#">Management</a>
                         <div class="dropdown-content">
                             <a href="People.aspx">Peopele</a>
                             <a href="Courses.aspx">Courses</a>
                             <a href="Teachers.aspx">Teachers</a>
                             <a href="Students.aspx">Students</a>
-                         </div>
-                    </li>
-                    <li class="dropdown" runat="server" id="Li5">
-                        <a href="#">Electricity</a>
-                        <div class="dropdown-content">
-                            <a href="Electricity and Coulombs Law.aspx">Electricity and Colon law</a>
-                            <a href="Electical Field.aspx">Electical Field</a>
-                            <a href="Electic Potential Energy.aspx">Electic Potential Energy</a>
-                            <a href="Current and Resistance.aspx">Current and Resistance</a>
-                            <a href="DC Circuits.aspx">DC Circuits</a>
-                            <a href="Magnets and Magnetic Fields.aspx">Magnets and Magnet Field</a>
-                            <a href="EMF and Induction.aspx">Faradey law and inductive EMF</a>
                         </div>
                     </li>
+
                     <li class="dropdown" runat="server" id="Li6">
                         <a href="#">Admin</a>
-                            <div class="dropdown-content">
-                                <a href="Admin.aspx">Users Admin</a>
-                                <a href="AdminCounters.aspx">Application Admin</a>
-                                <a href="AdminMainPage.aspx">Application  Main Admin</a>
-                             </div>
-                       </li>                                
-                  </ul>
+                        <div class="dropdown-content">
+                            <a href="Admin.aspx">Users Admin</a>
+                            <a href="AdminCounters.aspx">Application Admin</a>
+                            <a href="AdminMainPage.aspx">Application  Main Admin</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

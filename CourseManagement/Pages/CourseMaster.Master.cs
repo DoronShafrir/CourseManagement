@@ -19,10 +19,6 @@ namespace CourseManagement.Pages
                     /***********User Name On above the NavBar  **************/
                     CurrentUserName.InnerHtml = "Welcome " + Session["FirstName"] + " " + Session["LastName"];
                     /***************open the entire nav bar****************/
-                    Li3.Style.Add("display", "block");
-                    Li4.Style.Add("display", "block");
-                    Li5.Style.Add("display", "block");
-                    if ((bool)Session["Admin"]) { Li6.Style.Add("display", "block"); }
                 }
                 else
                 {
@@ -31,8 +27,33 @@ namespace CourseManagement.Pages
                     Li5.Style.Add("display", "none");
                     Li5.Style.Add("display", "none");
                 }
-            }
+                if ((bool)Session["Admin"])
+                {
 
+                    Li3.Style.Add("display", "block");
+                    Li4.Style.Add("display", "block");
+                    Li5.Style.Add("display", "block");
+                    Li6.Style.Add("display", "block");
+                }
+                if (!(bool)Session["Admin"] && (bool)Session["Teacher"])
+                {
+
+                    Li3.Style.Add("display", "block");
+                    Li4.Style.Add("display", "none");
+                    Li5.Style.Add("display", "none");
+                    Li5.Style.Add("display", "none");
+                }
+                if (!(bool)Session["Admin"] && !(bool)Session["Teacher"])
+                {
+                    {
+                        Li3.Style.Add("display", "none");
+                        Li4.Style.Add("display", "block");
+                        Li5.Style.Add("display", "none");
+                        Li5.Style.Add("display", "none");
+                    }
+                }
+
+            }
         }
 
         protected void Exit(object sender, EventArgs e)

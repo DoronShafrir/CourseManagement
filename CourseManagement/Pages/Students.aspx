@@ -15,11 +15,10 @@
 
 <%----Add Insert part--%>
 
-<div id="active_input" runat="server">
+<div id="active_input" class="select-container" runat="server">
     <span id="insertStudentList" class="selectList" runat="server"></span>
     <span id="insertCourseList" class="selectList" runat="server"></span>
-    <%--<input type="text" id="newStudentName" class="input_field" placeholder="Student Name" runat="server" />
-    <input type="text" id="newCourseName" class="input_field" placeholder="Course Name" runat="server" />--%>
+   
 </div>
 
 <div runat="server">

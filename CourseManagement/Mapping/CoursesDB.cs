@@ -126,6 +126,53 @@ namespace CourseManagement.Mapping
             }
             return records;
         }
+        public string PrepareCoursestDropDownList()
+        {
+            Courses courses = new Courses();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlCommand command = new SqlCommand("SELECT Courses.CId, Courses.CourseName FROM  Courses;", connection))
+            {
+                try
+                {
+                    connection.Open();
+
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    // Loop through the data and add <option> elements to the <select> element
+                    while (reader.Read())
+                    {
+                        Student student = new Student
+                        {
+                            CId = (int)reader["CId"],
+                            CourseName = reader["CourseName"].ToString()
+                        };
+                        courses.Add(student);
+                    }
+
+                    // Close the SqlDataReader
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception (log, throw, etc.)
+                    Console.WriteLine(ex.Message);
+                }
+
+                finally
+                {
+                    connection.Close();
+                }
+            }
+            string prepartion;
+            prepartion = " <select name=\"idCourseToSelect\" >";
+            prepartion += "<option>Course to register the student";
+            foreach (var item in courses)
+            {
+                prepartion += $"<option value={item.CId}> Course Name:{item.CourseName} </ option >";
+            }
+            prepartion += "</select>";
+            return prepartion;
+        }
         //checkmname() checks if teh anme exist in the people table if yes return the PId and if not return 0
         public int CheckName(string name)
         {
