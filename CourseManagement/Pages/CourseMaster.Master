@@ -46,7 +46,7 @@
                             <a href="LogOut.aspx">Exit</a>
                         </div>
                     </li>
-                    <li runat="server" id="Li3">
+                    <li class="dropdown" runat="server" id="Li3">
                         <a href="#">Students</a>
                         <div class="dropdown-content">
                             <a href="#">Manage My Courses</a>
@@ -54,7 +54,7 @@
                             <a href="#">My Status</a>
                         </div>
                     </li>
-                    <li runat="server" id="Li4">
+                    <li class="dropdown" runat="server" id="Li4">
                         <a href="#">Teachers</a>
                         <div class="dropdown-content">
                             <a href="#">Manage My Courses</a>
