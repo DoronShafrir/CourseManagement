@@ -70,6 +70,9 @@
     <Content Include="CSS\NavBar.css" />
     <Content Include="CSS\ManagementStyleSheet.css" />
     <Content Include="Global.asax" />
+    <Content Include="Pages\Students\Manage  My Courses.aspx" />
+    <Content Include="Pages\Students\Register Course.aspx" />
+    <Content Include="Pages\Students\MyStatus.aspx" />
     <Content Include="Pages\WelcomePage.aspx" />
     <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\LogOut.aspx" />
@@ -99,6 +102,27 @@
     </Compile>
     <Compile Include="Pages\CourseMaster.Master.designer.cs">
       <DependentUpon>CourseMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Students\Manage  My Courses.aspx.cs">
+      <DependentUpon>Manage  My Courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Students\Manage  My Courses.aspx.designer.cs">
+      <DependentUpon>Manage  My Courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Students\Register Course.aspx.cs">
+      <DependentUpon>Register Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Students\Register Course.aspx.designer.cs">
+      <DependentUpon>Register Course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Students\MyStatus.aspx.cs">
+      <DependentUpon>MyStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Students\MyStatus.aspx.designer.cs">
+      <DependentUpon>MyStatus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\WelcomePage.aspx.cs">
       <DependentUpon>WelcomePage.aspx</DependentUpon>
@@ -172,6 +196,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Img\" />
     <Folder Include="JS\" />
+    <Folder Include="Pages\Teachers\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

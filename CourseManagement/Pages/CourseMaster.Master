@@ -24,11 +24,11 @@
                          <%--<input type="button" value="Logout"  style="font-size:1.5em;" onserverclick="Out" runat="server" />--%>
                     </td>
                     <td style="width: 70%;">
-                        <img src="../Img/quantum.jpg" height="100" />
-                        <img src="../Img/quantum.jpg" height="100" />
-                        <img src="../Img/quantum.jpg" height="100" />
-                        <img src="../Img/quantum.jpg" height="100" />
-                        <img src="../Img/quantum.jpg" height="100" />
+                        
+                        <img src="../Img/quantum.jpg" height="100" class="titlePicture" />
+                        <img src="../Img/quantum.jpg" height="100" class="titlePicture"/>
+                        <img src="../Img/quantum.jpg" height="100" class="titlePicture"/>
+                        <img src="../Img/quantum.jpg" height="100" class="titlePicture"/>
                     </td>
                     <td id="CurrentUserName" style="width: 15%; font-size: 2em" runat="server"></td>
                 </tr>
@@ -41,8 +41,8 @@
                     <li class="dropdown" runat="server" id="Li2">
                         <a href="#">Login</a>
                         <div class="dropdown-content">
-                            <a href="Login.aspx">Login</a>
-                            <a href="LogUp.aspx">LogUp</a>
+                            <a href="~/Pages/Login.aspx">Login</a>
+                            <a href="<%= ResolveUrl("~/pages/LogUp.aspx") %>">LogUp</a>
                             <a href="LogOut.aspx">Exit</a>
                         </div>
                     </li>
@@ -51,7 +51,7 @@
                         <div class="dropdown-content">
                             <a href="#">Manage My Courses</a>
                             <a href="#">Register Course</a>
-                            <a href="#">My Status</a>
+                            <a href="Students/MyStatus.aspx">My Status</a>
                         </div>
                     </li>
                     <li class="dropdown" runat="server" id="Li4">
@@ -86,5 +86,16 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <script>
+        const imgPath = document.querySelectorAll(".titlePicture");
+        let instead = window.location.href;
+        let part = instead.split("/");
+        part.pop();
+        if (part.pop() != "Pages") {
+            for (let i = 0; i < imgPath.length; i++) 
+                imgPath[i].src = "../../Img/quantum.jpg";
+        }
+        
+    </script>
 </body>
 </html>
