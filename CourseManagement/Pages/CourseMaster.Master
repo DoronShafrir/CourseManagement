@@ -36,14 +36,14 @@
             <div id="mainBar">
                 <ul class="HorBarUl">
                     <li id="Li1" runat="server">
-                        <a href="WelcomePage.aspx">Welcome</a>
+                        <a href="<%= ResolveUrl("~/pages/WelcomePage.aspx") %>">Welcome</a>
                     </li>
                     <li class="dropdown" runat="server" id="Li2">
                         <a href="#">Login</a>
                         <div class="dropdown-content">
-                            <a href="~/Pages/Login.aspx">Login</a>
+                            <a href="<%= ResolveUrl("~/pages/Login.aspx") %>">Login</a>
                             <a href="<%= ResolveUrl("~/pages/LogUp.aspx") %>">LogUp</a>
-                            <a href="LogOut.aspx">Exit</a>
+                            <a href="<%= ResolveUrl("~/pages/LogOut.aspx") %>">Exit</a>
                         </div>
                     </li>
                     <li class="dropdown" runat="server" id="Li3">
@@ -51,7 +51,7 @@
                         <div class="dropdown-content">
                             <a href="#">Manage My Courses</a>
                             <a href="#">Register Course</a>
-                            <a href="Students/MyStatus.aspx">My Status</a>
+                            <a href="<%= ResolveUrl("~/pages/Students/MyStatus.aspx") %>">My Status</a>
                         </div>
                     </li>
                     <li class="dropdown" runat="server" id="Li4">
@@ -65,19 +65,19 @@
                     <li class="dropdown" runat="server" id="Li5">
                         <a href="#">Management</a>
                         <div class="dropdown-content">
-                            <a href="People.aspx">Peopele</a>
-                            <a href="Courses.aspx">Courses</a>
-                            <a href="Teachers.aspx">Teachers</a>
-                            <a href="Students.aspx">Students</a>
+                            <a href="<%= ResolveUrl("~/pages/People.aspx") %>">Peopele</a>
+                            <a href="<%= ResolveUrl("~/pages/Courses.aspx") %>">Courses</a>
+                            <a href="<%= ResolveUrl("~/pages/Teachers.aspx") %>">Teachers</a>
+                            <a href="<%= ResolveUrl("~/pages/Students.aspx") %>">Students</a>
                         </div>
                     </li>
 
                     <li class="dropdown" runat="server" id="Li6">
                         <a href="#">Admin</a>
                         <div class="dropdown-content">
-                            <a href="Admin.aspx">Users Admin</a>
-                            <a href="AdminCounters.aspx">Application Admin</a>
-                            <a href="AdminMainPage.aspx">Application  Main Admin</a>
+                            <a href="<%= ResolveUrl("~/pages/Admin.aspxx") %>">href="Admin.aspx">Users Admin</a>
+                            <a href="<%= ResolveUrl("~/pages/AdminCounters.aspx") %>">href="AdminCounters.aspx">Application Admin</a>
+                            <a href="<%= ResolveUrl("~/pages/AdminMainPage.aspx") %>">href="AdminMainPage.aspx">Application  Main Admin</a>
                         </div>
                     </li>
                 </ul>
