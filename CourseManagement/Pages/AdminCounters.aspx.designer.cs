@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CourseManagement.Pages.Students
+namespace CourseManagement.Pages
 {
 
 
-    public partial class WebForm1
+    public partial class AdminCounters
     {
     }
 }

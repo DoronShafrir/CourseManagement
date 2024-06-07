@@ -49,7 +49,7 @@
                     <li class="dropdown" runat="server" id="Li3">
                         <a href="#">Students</a>
                         <div class="dropdown-content">
-                            <a href="#">Manage My Courses</a>
+                            <a href="<%=ResolveUrl("~/pages/Students/ManageMyCourses.aspx") %>">Manage My Courses</a>
                             <a href="#">Register Course</a>
                             <a href="<%= ResolveUrl("~/pages/Students/MyStatus.aspx") %>">My Status</a>
                         </div>
@@ -57,7 +57,7 @@
                     <li class="dropdown" runat="server" id="Li4">
                         <a href="#">Teachers</a>
                         <div class="dropdown-content">
-                            <a href="#">Manage My Courses</a>
+                            <a href="<%=ResolveUrl("~/pages/Students/ManageMyCourses.aspx") %>">Manage My Courses</a>
                             <a href="#">Add Course</a>
                             <a href="#">Manage Students and Marks</a>
                         </div>
@@ -75,9 +75,9 @@
                     <li class="dropdown" runat="server" id="Li6">
                         <a href="#">Admin</a>
                         <div class="dropdown-content">
-                            <a href="<%= ResolveUrl("~/pages/Admin.aspxx") %>">href="Admin.aspx">Users Admin</a>
-                            <a href="<%= ResolveUrl("~/pages/AdminCounters.aspx") %>">href="AdminCounters.aspx">Application Admin</a>
-                            <a href="<%= ResolveUrl("~/pages/AdminMainPage.aspx") %>">href="AdminMainPage.aspx">Application  Main Admin</a>
+                            <a href="<%= ResolveUrl("~/pages/Admin.aspx") %>">Users Admin</a>
+                            <a href="<%= ResolveUrl("~/pages/AdminCounters.aspx") %>">Application Admin</a>
+                            <a href="<%= ResolveUrl("~/pages/AdminMainPage.aspx") %>">Application  Main Admin</a>
                         </div>
                     </li>
                 </ul>

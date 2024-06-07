@@ -70,7 +70,10 @@
     <Content Include="CSS\NavBar.css" />
     <Content Include="CSS\ManagementStyleSheet.css" />
     <Content Include="Global.asax" />
-    <Content Include="Pages\Students\Manage  My Courses.aspx" />
+    <Content Include="Pages\AdminCounters.aspx" />
+    <Content Include="Pages\Admin.aspx" />
+    <Content Include="Pages\AdminMainPage.aspx" />
+    <Content Include="Pages\Students\ManageMyCourses.aspx" />
     <Content Include="Pages\Students\Register Course.aspx" />
     <Content Include="Pages\Students\MyStatus.aspx" />
     <Content Include="Pages\WelcomePage.aspx" />
@@ -89,6 +92,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mapping\CoursesDB.cs" />
+    <Compile Include="Mapping\IndividualStudentDB.cs" />
     <Compile Include="Mapping\PeopleDB.cs" />
     <Compile Include="Mapping\StudentsDB.cs" />
     <Compile Include="Mapping\TeachersDB.cs" />
@@ -96,6 +100,27 @@
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\Teacher.cs" />
+    <Compile Include="Pages\AdminCounters.aspx.cs">
+      <DependentUpon>AdminCounters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminCounters.aspx.designer.cs">
+      <DependentUpon>AdminCounters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminMainPage.aspx.cs">
+      <DependentUpon>AdminMainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminMainPage.aspx.designer.cs">
+      <DependentUpon>AdminMainPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CourseMaster.Master.cs">
       <DependentUpon>CourseMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,12 +128,12 @@
     <Compile Include="Pages\CourseMaster.Master.designer.cs">
       <DependentUpon>CourseMaster.Master</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Students\Manage  My Courses.aspx.cs">
-      <DependentUpon>Manage  My Courses.aspx</DependentUpon>
+    <Compile Include="Pages\Students\ManageMyCourses.aspx.cs">
+      <DependentUpon>ManageMyCourses.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Students\Manage  My Courses.aspx.designer.cs">
-      <DependentUpon>Manage  My Courses.aspx</DependentUpon>
+    <Compile Include="Pages\Students\ManageMyCourses.aspx.designer.cs">
+      <DependentUpon>ManageMyCourses.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Students\Register Course.aspx.cs">
       <DependentUpon>Register Course.aspx</DependentUpon>

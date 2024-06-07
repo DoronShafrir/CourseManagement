@@ -44,21 +44,27 @@ namespace CourseManagement.Pages
                     // בניית השורה להוספה
                     DataRow dr = ds.Tables["names"].NewRow();
 
-                    dr["FirstName"] = Request.Form["firstName"];
-                    dr["LastName"] = Request.Form["lastName"];
-                    dr["UserName"] = Request.Form["userName"];
-                    dr["Password"] = Request.Form["password"];
-                    dr["BirthDate"] = Request.Form["birth"];
-                    dr["Email"] = Request.Form["email"];
-                    dr["Admin"] = 0;
-                    ds.Tables["names"].Rows.Add(dr);
+                    try
+                    {
 
-                    // עדכון הדאטה סט בבסיס הנתונים
-                    SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
-                    adapter.UpdateCommand = builder.GetInsertCommand();
-                    adapter.Update(ds, "names");
-                    string localHost = Request.Url.ToString().Substring(0, 23);
-                    Response.Redirect(localHost + "HTML/Physics.aspx");
+                        dr["FirstName"] = Request.Form["firstName"];
+                        dr["LastName"] = Request.Form["lastName"];
+                        dr["UserName"] = Request.Form["userName"];
+                        dr["Password"] = Request.Form["password"];
+                        dr["BirthDate"] = Request.Form["birth"];
+                        dr["Email"] = Request.Form["email"];
+                        dr["Admin"] = 0;
+                        ds.Tables["names"].Rows.Add(dr);
+
+
+                        // עדכון הדאטה סט בבסיס הנתונים
+                        SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+                        adapter.UpdateCommand = builder.GetInsertCommand();
+                        adapter.Update(ds, "names");
+                        string localHost = Request.Url.ToString().Substring(0, 23);
+                        Response.Redirect(localHost + "HTML/Physics.aspx");
+                    }
+                    catch { }
                 }
             }
         }
