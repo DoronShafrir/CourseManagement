@@ -20,7 +20,7 @@ namespace CourseManagement.Pages
                 if (!((bool)Session["Admin"]))
                 {
                     string localHost = Request.Url.ToString().Substring(0, 23);
-                    Response.Redirect(localHost + "HTML/Physics.aspx");
+                    Response.Redirect(localHost + "WelcomePage.aspx");
                 }
                 else
                 {
@@ -113,7 +113,7 @@ namespace CourseManagement.Pages
         public void Delete_User(object sender, EventArgs e)
         {
             {
-                /******** delte the right UserName*******************/
+                /******** delete the right UserName*******************/
                 string d_User_Name = Request.Form["deleteText"];
 
                 string SQLStr = $"DELETE FROM Person WHERE UserName = '{d_User_Name}'; ";

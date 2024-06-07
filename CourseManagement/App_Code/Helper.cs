@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Net.NetworkInformation;
 
 namespace CourseManagement.App_Code
 {
@@ -60,6 +61,19 @@ namespace CourseManagement.App_Code
             str += "</tr>";
             str += "</Table>";
             return str;
+        }
+
+        public static string Search_Name(string NameToSearch, string conString)
+        {
+            {
+                /********Search from the table*******************/
+                
+
+                string SQLStr = "SELECT * FROM Person WHERE" + $" Name LIKE '%{NameToSearch}%' OR" + $" FName LIKE '%{NameToSearch}%' ";
+                return FetchTable(SQLStr, conString);
+
+                
+            }
         }
     }
 
